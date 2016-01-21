@@ -1,0 +1,24 @@
+
+
+<template name="uploader">
+  <form>
+    <input type="file" name="image" />
+  </form>
+  <br/>
+  {{#each uploads}}
+    <p>
+      {{#if isImage}}
+        <a href="{{url}}">
+          <img src="{{url}}" alt="{{original.name}}" />
+        </a>
+      {{else}}
+        {{original.name}}
+        <a href="{{url download=true}}">
+          Download
+        </a>
+      {{/if}}
+      <br/>
+      {{> FS.DeleteButton class=""}}
+    </p>
+  {{/each}}
+</template>

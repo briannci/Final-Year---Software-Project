@@ -1,0 +1,14 @@
+<template name="profile">
+<div class="container text-center">
+	
+	<div class="list card userBox">
+		   <h3> Username: {{username}}</h3><br>
+			{{! with acts as an if : the following part won't be displayed
+				if the user document has no profile property}}
+			{{#with profile}}
+				<h4>Owner name : {{fullname}}</h4>
+			{{/with}}
+
+	</div>
+</div>
+</template>
