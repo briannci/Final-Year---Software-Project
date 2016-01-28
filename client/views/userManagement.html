@@ -1,54 +1,62 @@
 <template name="userManagement">
-<div style='position:absolute; top:0; right:0; bottom:0; left:0; overflow-y:scroll; overflow-x: hidden'>
-<div class="bar bar-header bar-balanced">
-	<h1 class="title">PetPal</h1>
-</div>
-  <div class="container userBox">
-   
-        {{# if currentUser}}
-        <!-- Message for logged in user -->
-        <p>Hello <strong>{{currentUser.username}}</strong>, Your are logged into PetPal</p>
-        <button type="button" class="button button-clear button-positive" id="logout">Log out</button>
+    <div style='position:absolute; top:0; right:0; bottom:0; left:0; overflow-y:scroll; overflow-x: hidden'>
+        <div class="bar bar-header bar-balanced">
+            <h1 class="title">PetPal</h1>
+        </div>
+        <div class="container userBox">
 
-        {{else}}
-		
-        <!-- Log in module -->
-        <h4>Already have an account?</h4>
-		<div class="list list-inset">
-			<label class="item item-input">
-				<input type="text" placeholder="Username" id="login-username">
-			</label>
-			
-			<label class="item item-input">
-				<input type="password" placeholder="Password" id="login-password">
-			</label>
+            {{# if currentUser}}
+                <!-- Message for logged in user -->
+                <p>Hello <strong>{{currentUser.username}}</strong>, You are logged into PetPal</p>
+                <button type="button" class="button button-block button-assertive" id="logout">Log out</button>
 
-        <button type="button" class="button button-block button-positive login" id="login">Log in</button>
-		</div>
-		
-		<hr/>
+                <a href="{{pathFor 'profile'  username=currentUser.username}}" class="button button-block button-positive">
+                    My Profile
+                </a>
 
-        <!-- Sign up module -->
-        <h4>New User?</h4>
-		
-		<div class="list list-inset">
-			<label class="item item-input">
-				<input type="text" placeholder="Username" id="signup-username">
-			</label>
-			<label class="item item-input item-floating-label">
-				<input type="text" placeholder="Full Name" id="signup-fullname">
-			</label>
-			<label class="item item-input item-floating-label">
-				<input type="text" placeholder="Pet Name" id="signup-pname">
-			</label>
-			<label class="item item-input item-floating-label">
-				<input type="password" placeholder="Password" id="signup-password">
-			</label>
+            {{else}}
 
-        <button type="button" class="button button-block button-positive" id="signup">Sign up</button>
-		</div>
-		
-        {{/if}}
-  </div>
-</div>
+                <!-- Log in module -->
+                <h4>Already have an account?</h4>
+                <div class="list list-inset">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Username" id="login-username">
+                    </label>
+
+                    <label class="item item-input">
+                        <input type="password" placeholder="Password" id="login-password">
+                    </label>
+
+                    <button type="button" class="button button-block button-positive login submit" id="login">Log in</button>
+                </div>
+
+                <hr/>
+
+                <!-- Sign up module -->
+                <h4>New User?</h4>
+
+                <div class="list list-inset">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Username" id="signup-username">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <input type="text" placeholder="Full Name" id="signup-fullname">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <input type="text" placeholder="Pet Name" id="signup-petname">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <input type="text" placeholder="Pet Age" id="signup-petage">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <input type="password" placeholder="Password" id="signup-password">
+                    </label>
+
+                    <button type="button" class="button button-block button-positive" id="signup">Sign up</button>
+                </div>
+
+            {{/if}}
+
+        </div>
+    </div>
 </template>

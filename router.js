@@ -10,9 +10,13 @@ Router.plugin("dataNotFound",{
     notFoundTemplate: "dataNotFound"
 });
 
-Router.route("/profile/:username",{
-    name:"profile",
-    controller:"ProfileController"
+
+
+Router.map(function () {
+    this.route('profile', {
+        path: '/profile/:username',
+        controller:"ProfileController"
+    });
 });
 
 Router.route('/', function () {
@@ -23,6 +27,8 @@ Router.route('/upload', function () {
   this.render('hello');
 });
 
-Router.route('/register', function () {
-  this.render('register');
-});
+
+
+
+
+

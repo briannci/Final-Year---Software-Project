@@ -27,3 +27,8 @@ driftyco:ionic
 cfs:standard-packages
 cfs:filesystem
 cfs:ui
+autopublish
+insecure
+juliancwirko:s-alert
+juliancwirko:s-alert-flip
+fortawesome:fontawesome

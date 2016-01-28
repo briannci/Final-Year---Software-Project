@@ -1,0 +1,16 @@
+
+    <template name="add_item">
+        <div class="list list-inset">
+            <label class="item item-input">
+            <input type="text" class="the_item" placeholder="Pet Name:">
+            </label>
+        </div>
+    </template>
+
+    <template name="list_items">
+
+            {{#each all_items}}
+                <h3>{{item}}</h3>
+            {{/each}}
+
+    </template>

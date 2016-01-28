@@ -20,7 +20,7 @@ Meteor.publish("userProfile",function(username){
         // property from the fetched document, you might want to
         // set only a nested property of the profile as private
         // instead of the whole property
-        return Meteor.users.find(user._id,{
+        return Meteor.users.find(user._id, user.fullname,{
             fields:{
                 "profile":0
             }
