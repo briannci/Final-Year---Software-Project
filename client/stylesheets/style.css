@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 .userBox{
-	margin-top:100px;
+	margin-top:60px;
 }
 
 .username{
@@ -14,4 +14,25 @@
 .load{
 	margin-top:300px;
 }
+
+.map-container {
+	width: 100%;
+	max-width: 100%;
+	height: 380px;
+    margin-top:40px;
+}
+
+.an1{
+    -vendor-animation-delay: 6s;
+    -vendor-animation-duration: 3s;
+}
+.an2{
+    -vendor-animation-delay: 8s;
+    -vendor-animation-duration: 6s;
+}
+.an3{
+    -vendor-animation-delay: 10s;
+    -vendor-animation-duration: 9s;
+ }
+
 

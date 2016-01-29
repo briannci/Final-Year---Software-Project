@@ -4,7 +4,10 @@
             <h1 class="title">PetPal</h1>
         </div>
         <div class="container userBox">
-
+            <h3 class="text-center">What is PetPal?</h3>
+            <h4 class="text-justify">PetPal is an application built purposely for pet owners. <br/><br/>The goal of this application
+            is to give a pet owner every possible chance of their pet returning safely if the situation arose
+                whereby your your pet went missing.</h4><br/><br/>
             {{# if currentUser}}
                 <!-- Message for logged in user -->
                 <p>Hello <strong>{{currentUser.username}}</strong>, You are logged into PetPal</p>
@@ -13,6 +16,7 @@
                 <a href="{{pathFor 'profile'  username=currentUser.username}}" class="button button-block button-positive">
                     My Profile
                 </a>
+
 
             {{else}}
 

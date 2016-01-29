@@ -1,39 +1,57 @@
 <template name="profile">
     <div style='position:absolute; top:0; right:0; bottom:0; left:0; overflow-y:scroll; overflow-x: hidden'>
     <div class="bar bar-header bar-balanced">
-
         <a href="/" class="button icon-left ion-chevron-left button-clear button-light">Back</a>
-
         <h1 class="title">PetPal</h1>
     </div>
 
 
-	<div class="list card userBox text-center">
-        <i class="icon ion-android-person"></i>
-		   <h3> Username: {{username}}</h3><br>
-			{{! with acts as an if : the following part won't be displayed
-				if the user document has no profile property}}
 
+	<div class="list card userBox text-center">
+        <h3 class="text-center"> Username: {{username}}</h3>
         <div class="item">
             <img src="https://placehold.it/200x200" alt="">
         </div>
 
+			{{! with acts as an if : the following part won't be displayed
+				if the user document has no profile property}}
     {{#with profile}}
-        <h4>
-        <div class="item">
+
+        <h3 class="text-center">
+        <div class="item animated bounceInLeft an1">
         Owner name : {{fullname}}
         </div>
-        <div class="item">
+        <div class="item animated bounceInRight an2">
             Pet Name: {{petname}}
         </div>
-        <div class="item">
+        <div class="item animated bounceInUp an3">
             Pet Age: {{petage}}
         </div>
-        </h4>
+        </h3>
     {{/with}}
 
     </div>
+
     </div>
+
+
+    <div class="tabs-striped tabs-color-balanced tabs-background-dark">
+            <div class="tabs">
+                <a class="tab-item active" href="#">
+                    <i class="icon ion-android-person"></i>
+                    Home
+                </a>
+                <a class="tab-item .pin" href="/profile/{{this.username}}/location">
+                    <i class="icon ion-location"></i>
+                    Location Found
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-android-chat"></i>
+                    Contact
+                </a>
+            </div>
+        </div>
+
 
 </template>
 

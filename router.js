@@ -10,8 +10,6 @@ Router.plugin("dataNotFound",{
     notFoundTemplate: "dataNotFound"
 });
 
-
-
 Router.map(function () {
     this.route('profile', {
         path: '/profile/:username',
@@ -20,12 +18,16 @@ Router.map(function () {
 });
 
 Router.route('/', function () {
-  this.render('userManagement');
+    this.render('userManagement');
 });
 
-Router.route('/upload', function () {
-  this.render('hello');
+Router.route('profile/:username/location', function () {
+    this.render('location');
 });
+
+
+
+
 
 
 
