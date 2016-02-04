@@ -2,8 +2,13 @@
 
 Meteor.publish('users', function(username) {
   return Meteor.users.find({}, {
-    fields: { 'username': 1 },
-    limit: 100
+    fields: {
+      "profile.fullname": 1,
+      "profile.petname": 1,
+      "_id": 1,
+      "username": 1,
+      "profile.username": 1
+    }
   });
 });
 

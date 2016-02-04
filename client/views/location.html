@@ -8,7 +8,16 @@
     <div class="list card">
         <div class="item">
         {{> map}}
-            <button class="button button-positive button-block">Send location</button>
+            <div class="list list-inset">
+                <h2 class="text-center">Send your details to the Pet Owner</h2>
+                <label class="item item-input">
+                    <input type="text" placeholder="Name" id="send-name">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Phone Number" id="send-phone">
+                </label>
+            <button type="submit" class="button button-positive button-block">Send location</button>
+            </div>
         </div>
     </div>
 
@@ -16,7 +25,7 @@
 
     <div class="tabs-striped tabs-color-balanced tabs-background-dark">
         <div class="tabs">
-            <a class="tab-item" href="/profile/{{this.username}}">
+            <a class="tab-item" href="{{pathFor 'profile'  username=currentUser.username}}">
                 <i class="icon ion-android-person"></i>
                 Home
             </a>
@@ -24,7 +33,7 @@
                 <i class="icon ion-location"></i>
                 Location Found
             </a>
-            <a class="tab-item" href="#">
+            <a class="tab-item" href="/profile/{{CurrentUser.username}}/contact">
                 <i class="icon ion-android-chat"></i>
                 Contact
             </a>

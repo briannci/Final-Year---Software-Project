@@ -13,7 +13,8 @@ Router.plugin("dataNotFound",{
 Router.map(function () {
     this.route('profile', {
         path: '/profile/:username',
-        controller:"ProfileController"
+        controller:"ProfileController",
+        name:"profile"
     });
 });
 
@@ -25,6 +26,13 @@ Router.route('profile/:username/location', function () {
     this.render('location');
 });
 
+Router.route('profile/:username/contact', function () {
+    this.render('contact');
+});
+
+Router.route('profile/:petname', function () {
+    this.render('profile');
+});
 
 
 

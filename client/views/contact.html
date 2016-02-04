@@ -1,0 +1,25 @@
+<template name="contact">
+
+    <div style='position:absolute; top:0; right:0; bottom:0; left:0; overflow-y:scroll; overflow-x: hidden'>
+        <div class="bar bar-header bar-balanced">
+            <h1 class="title">PetPal</h1>
+        </div>
+        </div>
+
+    <div class="tabs-striped tabs-color-balanced tabs-background-dark">
+        <div class="tabs">
+            <a class="tab-item" href="/">
+                <i class="icon ion-android-person"></i>
+                Home
+            </a>
+            <a class="tab-item .pin" href="/profile/{{this.username}}/location">
+                <i class="icon ion-location"></i>
+                Location Found
+            </a>
+            <a class="tab-item active" href="#">
+                <i class="icon ion-android-chat"></i>
+                Contact
+            </a>
+        </div>
+    </div>
+</template>

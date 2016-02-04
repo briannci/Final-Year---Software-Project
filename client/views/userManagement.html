@@ -4,10 +4,7 @@
             <h1 class="title">PetPal</h1>
         </div>
         <div class="container userBox">
-            <h3 class="text-center">What is PetPal?</h3>
-            <h4 class="text-justify">PetPal is an application built purposely for pet owners. <br/><br/>The goal of this application
-            is to give a pet owner every possible chance of their pet returning safely if the situation arose
-                whereby your your pet went missing.</h4><br/><br/>
+
             {{# if currentUser}}
                 <!-- Message for logged in user -->
                 <p>Hello <strong>{{currentUser.username}}</strong>, You are logged into PetPal</p>
@@ -17,12 +14,28 @@
                     My Profile
                 </a>
 
+                <div class="tabs-striped tabs-color-balanced tabs-background-dark">
+                    <div class="tabs">
+                        <a class="tab-item active" href="#">
+                            <i class="icon ion-android-person"></i>
+                            Home
+                        </a>
+                        <a class="tab-item .pin" href="{{pathFor 'profile'  username=currentUser.username}}/location">
+                            <i class="icon ion-location"></i>
+                            Location Found
+                        </a>
+                        <a class="tab-item" href="{{pathFor 'profile {{this.username}}'}}/contact">
+                            <i class="icon ion-android-chat"></i>
+                            Contact
+                        </a>
+                    </div>
+                </div>
 
             {{else}}
 
                 <!-- Log in module -->
-                <h4>Already have an account?</h4>
-                <div class="list list-inset">
+                <h4 class="text-center">Login with an existing account.</h4>
+                <div class="list list-inset login">
                     <label class="item item-input">
                         <input type="text" placeholder="Username" id="login-username">
                     </label>
@@ -37,9 +50,12 @@
                 <hr/>
 
                 <!-- Sign up module -->
-                <h4>New User?</h4>
 
-                <div class="list list-inset">
+                <div class="list list-inset register">
+                    <h4 class="text-center">Register a new user.</h4>
+                    <label class="item item-input">
+                        <input type="text" placeholder="Email Address" id="signup-email">
+                    </label>
                     <label class="item item-input">
                         <input type="text" placeholder="Username" id="signup-username">
                     </label>
@@ -61,6 +77,13 @@
 
             {{/if}}
 
+            <!--<h3 class="text-center">What is PetPal?</h3>
+            <h4 class="text-justify">PetPal is an application built purposely for pet owners. <br/><br/>The goal of this application
+                is to give a pet owner every possible chance of their pet returning safely if the situation arose
+                whereby your your pet went missing.</h4><br/><br/>
+            -->
         </div>
     </div>
+
+
 </template>

@@ -3,6 +3,7 @@
 Template.userManagement.events({
   'click #signup': function() {
     var user = {
+        email: $('#signup-email').val(),
       username: $('#signup-username').val(),
       password: $('#signup-password').val(),
       profile: {

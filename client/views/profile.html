@@ -8,9 +8,9 @@
 
 
 	<div class="list card userBox text-center">
-        <h3 class="text-center"> Username: {{username}}</h3>
-        <div class="item">
-            <img src="https://placehold.it/200x200" alt="">
+        <h3 class="text-center bounceOutDown"> Username: {{username}}</h3>
+        <div class="item bounceIn">
+            <img src="/elmo.jpg" alt="" width="150" height="150">
         </div>
 
 			{{! with acts as an if : the following part won't be displayed
@@ -37,7 +37,7 @@
 
     <div class="tabs-striped tabs-color-balanced tabs-background-dark">
             <div class="tabs">
-                <a class="tab-item active" href="#">
+                <a class="tab-item" href="/">
                     <i class="icon ion-android-person"></i>
                     Home
                 </a>
@@ -50,8 +50,24 @@
                     Contact
                 </a>
             </div>
-        </div>
+    </div>
 
+    <div class="tabs-striped tabs-color-balanced tabs-background-dark">
+        <div class="tabs">
+            <a class="tab-item active" href="#">
+                <i class="icon ion-android-person"></i>
+                Home
+            </a>
+            <a class="tab-item .pin" href="/profile/{{this.username}}/location">
+                <i class="icon ion-location"></i>
+                Location Found
+            </a>
+            <a class="tab-item" href="/profile/{{this.username}}/contact">
+                <i class="icon ion-android-chat"></i>
+                Contact
+            </a>
+        </div>
+    </div>
 
 </template>
 
