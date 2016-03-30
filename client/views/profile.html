@@ -1,11 +1,13 @@
 <template name="profile">
     <div style='position:absolute; top:0; right:0; bottom:0; left:0; overflow-y:scroll; overflow-x: hidden'>
+
     <div class="bar bar-header bar-balanced">
-        <a href="/" class="button icon-left ion-chevron-left button-clear button-light">Back</a>
-        <h1 class="title">PetPal</h1>
+        {{# if currentUser}}
+            <a href="/" class="button icon-left ion-chevron-left button-clear button-light">My Account</a>
+            {{else}}
+            <h1 class="title">PetPal</h1>
+        {{/if}}
     </div>
-
-
 
 	<div class="list card userBox text-center">
         <h3 class="text-center bounceOutDown"> Username: {{username}}</h3>
@@ -18,56 +20,46 @@
     {{#with profile}}
 
         <h3 class="text-center">
-        <div class="item animated bounceInLeft an1">
+        <div class="item animated bounceInLeft">
         Owner name : {{fullname}}
         </div>
-        <div class="item animated bounceInRight an2">
+        <div class="item animated bounceInRight">
             Pet Name: {{petname}}
         </div>
-        <div class="item animated bounceInUp an3">
+        <div class="item animated bounceInUp">
             Pet Age: {{petage}}
         </div>
         </h3>
+
     {{/with}}
 
-    </div>
+    {{#with profile}}
+
+    Twitter Name: {{screenName}}
+
+    {{/with}}
+
 
     </div>
 
 
-    <div class="tabs-striped tabs-color-balanced tabs-background-dark">
+        <div class="tabs-striped tabs-color-balanced tabs-background-dark">
             <div class="tabs">
-                <a class="tab-item" href="/">
+                <a class="tab-item active" href="#">
                     <i class="icon ion-android-person"></i>
                     Home
                 </a>
-                <a class="tab-item .pin" href="/profile/{{this.username}}/location">
+                <a class="tab-item" href="/profile/{{currentUser.username}}/location">
                     <i class="icon ion-location"></i>
                     Location Found
                 </a>
-                <a class="tab-item" href="#">
+                <a class="tab-item" href="/profile/{{currentUser.username}}/contact">
                     <i class="icon ion-android-chat"></i>
                     Contact
                 </a>
             </div>
-    </div>
-
-    <div class="tabs-striped tabs-color-balanced tabs-background-dark">
-        <div class="tabs">
-            <a class="tab-item active" href="#">
-                <i class="icon ion-android-person"></i>
-                Home
-            </a>
-            <a class="tab-item .pin" href="/profile/{{this.username}}/location">
-                <i class="icon ion-location"></i>
-                Location Found
-            </a>
-            <a class="tab-item" href="/profile/{{this.username}}/contact">
-                <i class="icon ion-android-chat"></i>
-                Contact
-            </a>
         </div>
-    </div>
 
+</div>
 </template>
 

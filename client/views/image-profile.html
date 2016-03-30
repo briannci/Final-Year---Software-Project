@@ -1,0 +1,34 @@
+<template name="image-profile">
+  <div class="container">
+	<!-- Here We check if the user is online-->
+	{{#if currentUser}}
+	<!-- Here We check if the user upload an image {{showInputProfile}} line 46. profile.js -->
+	{{#if showInputProfile}}
+        
+        <form>
+          <div class="form-group formsProfile">
+          <label for="inputPng">Images Files(Any kind of file can be upload here)</label>
+          <input type="file" id="inputPng"><br>
+         </div>
+         </form>
+
+    <!-- Here We show the Images uploaded by the user {{showImagesUploadByUser}} line 54. profile.js -->
+    <ul class="rig">
+    <h1> Images Section </h1>
+    {{#each showImagesUploadByUser}}
+    {{#unless this.isUploaded}}
+      {{> FS.UploadProgressBar bootstrap=true}}
+    {{/unless}}
+       {{> image}}
+    {{/each}}
+   </ul>
+  {{else}}
+
+      
+    {{/if}}
+{{/if}}
+</div>
+</template>
+
+
+

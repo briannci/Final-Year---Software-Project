@@ -4,15 +4,26 @@
         <div class="bar bar-header bar-balanced">
             <h1 class="title">PetPal</h1>
         </div>
-        </div>
+    </div>
+
+    <div class="list card userBox">
+  <label class="item item-input">
+    <input type="text" placeholder="Name">
+  </label>
+
+  <label class="item item-input">
+    <textarea placeholder="Comments"></textarea>
+  </label>
+  <button type="submit" class="button button-positive button-block">Send Message</button>
+</div>
 
     <div class="tabs-striped tabs-color-balanced tabs-background-dark">
         <div class="tabs">
-            <a class="tab-item" href="/">
+            <a class="tab-item" href="{{pathFor 'profile'  username=currentUser.username}}">
                 <i class="icon ion-android-person"></i>
                 Home
             </a>
-            <a class="tab-item .pin" href="/profile/{{this.username}}/location">
+            <a class="tab-item .pin" href="/profile/{{currentUser.username}}/location">
                 <i class="icon ion-location"></i>
                 Location Found
             </a>

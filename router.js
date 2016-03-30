@@ -30,9 +30,25 @@ Router.route('profile/:username/contact', function () {
     this.render('contact');
 });
 
-Router.route('profile/:petname', function () {
+Router.route('profile/:screenName', function () {
     this.render('profile');
 });
+
+
+Router.configure({
+    layoutTemplate:'layout',
+    loadingTemplate: 'loading',
+})
+
+Router.route('/image', function () {
+  this.render('image-profile')
+});
+
+Router.route('/register', function () {
+  this.render('register')
+});
+
+
 
 
 
