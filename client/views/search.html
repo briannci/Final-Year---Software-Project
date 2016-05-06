@@ -1,0 +1,19 @@
+<template name="search-user">
+    <div style='position:absolute; top:0; right:0; bottom:0; left:0; overflow-y:scroll; overflow-x: hidden'>
+        <div class="bar bar-header bar-balanced">
+            <h1 class="title">PetPal</h1>
+        </div>
+        <div class="container userBox">
+            <div class="container userBox">
+                <div class="list list-inset">
+                <h2>Your logged in as Guest user {{currentUser.username}}</h2>
+                <h3>Search for the pet you found</h3>
+                    <label class="item item-input">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input type="text" placeholder="Search">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

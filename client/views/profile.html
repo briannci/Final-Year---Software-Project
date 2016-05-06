@@ -1,65 +1,43 @@
 <template name="profile">
-    <div style='position:absolute; top:0; right:0; bottom:0; left:0; overflow-y:scroll; overflow-x: hidden'>
-
-    <div class="bar bar-header bar-balanced">
-        {{# if currentUser}}
-            <a href="/" class="button icon-left ion-chevron-left button-clear button-light">My Account</a>
-            {{else}}
-            <h1 class="title">PetPal</h1>
-        {{/if}}
-    </div>
-
-	<div class="list card userBox text-center">
-        <h3 class="text-center bounceOutDown"> Username: {{username}}</h3>
-        <div class="item bounceIn">
-            <img src="/elmo.jpg" alt="" width="150" height="150">
-        </div>
-
-			{{! with acts as an if : the following part won't be displayed
-				if the user document has no profile property}}
-    {{#with profile}}
-
-        <h3 class="text-center">
-        <div class="item animated bounceInLeft">
-        Owner name : {{fullname}}
-        </div>
-        <div class="item animated bounceInRight">
-            Pet Name: {{petname}}
-        </div>
-        <div class="item animated bounceInUp">
-            Pet Age: {{petage}}
-        </div>
-        </h3>
-
-    {{/with}}
-
-    {{#with profile}}
-
-    Twitter Name: {{screenName}}
-
-    {{/with}}
-
-
-    </div>
-
-
-        <div class="tabs-striped tabs-color-balanced tabs-background-dark">
-            <div class="tabs">
-                <a class="tab-item active" href="#">
-                    <i class="icon ion-android-person"></i>
-                    Home
-                </a>
-                <a class="tab-item" href="/profile/{{currentUser.username}}/location">
-                    <i class="icon ion-location"></i>
-                    Location Found
-                </a>
-                <a class="tab-item" href="/profile/{{currentUser.username}}/contact">
-                    <i class="icon ion-android-chat"></i>
-                    Contact
-                </a>
+    <div class="back" style='background-color: #9FF7BB;'>
+        <div class="profile" style='position:absolute; top:0; right:0; bottom:0; left:0; padding-bottom:50px; overflow-y:scroll; overflow-x: hidden'>
+            <div class="bar bar-header bar-light">
+                {{# if currentUser}}
+                <a href="/" class="button icon-left ion-chevron-left button-clear button-balanced">My Account</a> {{else}}
+                <h1>PetPal</h1> {{/if}}
+            </div>
+            <div class="container userBox1 text-center">
+                <div class="pro-bg">
+                    <div class="col-sm-12 center-block">
+                        <h2 class="text-center bounceOutDown petinfo">Username: {{username}}</h2>
+                        <div class="list bounceIn">
+                            <img src="/elmo.jpg" alt="" width="150" height="150">
+                        </div>
+                        {{! with acts as an if : the following part won't be displayed if the user document has no profile property}} {{#with profile}}
+                        <div class="list animated bounceInLeft petinfo ">
+                            <h3 class="ion-ios-person-outline">&nbsp;&nbsp;Owner name : {{fullname}}</h3>
+                        </div>
+                        <div class="list animated bounceInRight petinfo ">
+                            <h3 class="ion-ios-paw-outline">&nbsp;&nbsp;Pet Name: {{petname}}</h3>
+                        </div>
+                        <div class="list animated bounceInUp petinfo">
+                            <h3 class="ion-calculator">&nbsp;&nbsp;Pet Age: {{petage}}</h3>
+                        </div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div class="col-sm-4 col-sm-offset-1">
+                <div class="list list-inset">
+                    {{> location}}
+                </div>
+            </div>
+            <div class="col-sm-5 col-sm-offset-1">
+                <div class="list list-inset color">
+                    {{> input }} {{> messages }}
+                </div>
             </div>
         </div>
-
-</div>
+    </div>
 </template>
-

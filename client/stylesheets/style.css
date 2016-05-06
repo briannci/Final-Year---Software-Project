@@ -1,32 +1,86 @@
 /* CSS declarations go here */
-.userBox{
-	margin-top:60px;
+
+body {
+    padding-bottom: 50px;
+    background-image: url('/dogs.jpg');
 }
 
-.username{
-	color:green;
+.userBox1 {
+    margin-top: 45px;
+    background-color: #33CD5F;
+    width:100%;
+    color:white;
 }
 
-.moveprofile{
-	margin-top:60px;
+.userBox {
+    margin-top: 60px;
 }
 
-.load{
-	margin-top:300px;
+
+.load {
+    margin-top: 300px;
 }
 
 .map-container {
-	width: 100%;
-	max-width: 100%;
-	height: 280px;
-    margin-top:40px;
+    width: 100%;
+    max-width: 100%;
+    height: 280px;
+    margin-top: 40px;
 }
 
-
-.login{
-    margin-top:20px;
+.petinfo {
+    padding: 20px;
 }
 
-body{
-	background-image: url(grass.jpg);
+.login {
+    margin-top: 20px;
+}
+
+.list-margin {
+    margin-top: 100px;
+}
+
+#log {
+    margin-top: 50px;
+}
+
+#loc-bg {
+    background-image: url('bg-maps');
+    padding: 20px;
+}
+
+.move {
+    margin-top: 20px;
+}
+
+.back {
+    background-color: #33CD5F;
+}
+
+.nocolor {
+    background-color: transparent;
+}
+
+.chat {
+    background-color: #16CEFB;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    padding: 20px;
+}
+
+.loading-message {
+    color: #fff;
+    font-size: 80px;
+    font-weight: 300;
+    font-family: sans-serif;
+}
+
+.sk-spinner-rotating-plane.sk-spinner {
+    background-color: #fff;
+}
+
+.color,
+.color1 {
+    padding: 40px;
 }

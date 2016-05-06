@@ -1,90 +1,43 @@
 <template name="userManagement">
-    <div style='position:absolute; top:0; right:0; bottom:0; left:0; overflow-y:scroll; overflow-x: hidden'>
+    <div style='position:absolute; top:0; right:0; bottom:0; left:0; padding-bottom:50px; overflow-y:scroll; overflow-x: hidden background-color:white;'>
         <div class="bar bar-header bar-balanced">
-        {{# if currentUser}}
-        <img src="{{currentUser.services.twitter.profile_image_url}}"/> 
-            <a href="{{pathFor 'profile'  username=currentUser.username}}" class="button icon-right ion-chevron-right button-clear button-light">My Profile</a>
-            {{else}}
-            <h1 class="title">PetPal</h1>
-        {{/if}}
-    </div>
+            {{# if isInRoleGuest}} 
+               
+            {{/if}} 
 
-        <div class="container userBox">
-
-
-        {{> _loginButtonsLoggingInSingleLoginButton }}
-        
-        {{# if currentUser}}
-            {{currentUser.profile.name}}
-            {{currentUser.services.twitter.screenName}}
-            {{currentUser.services.twitter.lang}}
-
-        {{else}}
-
-        {{/if}}
-
-
-        {{# if currentUser}}
-                <!-- Message for logged in user -->
-                <p>Hello <strong>{{currentUser.username}}{{currentUser.profile.name}}</strong>, You are logged into PetPal</p>
-
-                <button type="button" class="button button-block button-assertive" id="logout">Log out</button>
-
-                <a href="{{pathFor 'profile'  username=currentUser.username}}" class="button button-block button-positive">
+            {{# if currentUser}}
+            <img src="{{currentUser.services.twitter.profile_image_url}}" />
+            <a href="{{pathFor 'profile'  username=currentUser.username}}" class="button icon-right ion-chevron-right button-clear button-light">My Profile</a> {{else}}
+            <h1 class="white title">PetPal</h1> {{/if}}
+        </div>
+        <div class="container userBox white">
+            {{# if currentUser}} {{currentUser.profile.name}} {{currentUser.services.twitter.screenName}} {{currentUser.services.twitter.lang}} {{else}} {{/if}} {{# if currentUser}}
+            <!-- Message for logged in user -->
+            <h2 style="margin-top:40px;">Hello, {{currentUser.username}}</h2>
+            <button type="button" class="button button-block button-assertive" id="logout">Log out</button>
+            <a href="{{pathFor 'profile'  username=currentUser.username}}" class="button button-block button-positive">
                     My Profile
-                </a>
-
-                {{#if resetPassword}}
-                     <form id="new-password" action="action">
-                        <div>
-                           <input type="text" id="new-password-password" />
-                           <input type="submit" value="Change Password" />
-                        </div>
-                      </form>
-                {{else}}
-                      <form id="recovery-form" action="action">
-                        <div>
-                           <input type="text" id="recovery-email" />              
-                           <input type="submit" value="Send Reset Instructions" />
-                         </div>
-                      </form>
-                {{/if}}
-
-            {{else}}
-
-                <!-- Log in module -->
-                <h4 class="text-center">Login with an existing account.</h4>
-                <div class="list list-inset login">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Username</span>
-                        <input type="text" id="login-username">
-                    </label>
-
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Password</span>
-                        <input type="password" id="login-password">
-                    </label>
-                </div>
-                <div class="list list-inset">
-                    <button type="button" class="button button-block button-positive login submit" id="login">Log in</button>
-                    <a href="register" type="button" class="button button-block button-positive login submit" id="gotoregister">Register</a>
-                </div>
-
-                <div class="list list-inset">
-                    <button type="button" class="button button-block button-calm ion-social-twitter" id="signIn">Sign in with Twitter</button>
-                    <button type="button" class="button button-block button-calm ion-social-facebook" id="facebook-login">Sign in with Facebook</button>
-                </div>
-
-                
+                </a> {{else}}
+            <!-- Log in module -->
+            <h1 class="white text-center">PetPal</h1>
+            <img class="img-responsive center-block" src="/logo.png" />
+            <h3 class="white text-center" id="log">Login with an existing account.</h3>
+            <div class="list list-inset login">
+                <label class="item ">
+                    <span class="input-label">Username</span>
+                    <input type="text" id="login-username">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Password</span>
+                    <input type="password" id="login-password">
+                </label>
+            </div>
+            <div class="list list-inset nocolor">
+                <button type="button" class="button button-block button-positive login submit" id="login">Log in</button>
+            </div>
+            <h4 class="white">Or register an Pet owner account
+                <a href="register" id="gotoregister">here.</a></h4>&nbsp; &nbsp; &nbsp;
             {{/if}}
-
-            <!--<h3 class="text-center">What is PetPal?</h3>
-            <h4 class="text-justify">PetPal is an application built purposely for pet owners. <br/><br/>The goal of this application
-                is to give a pet owner every possible chance of their pet returning safely if the situation arose
-                whereby your your pet went missing.</h4><br/><br/>
-            -->
-</div>
-
-</div>
-
+        </div>
+    </div>
 </template>

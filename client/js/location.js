@@ -55,23 +55,7 @@ if (Meteor.isClient) {
 }
 
 Template.map.events = {
-    'click input[type=submit]': function () {
-        
-          
-
-        }
+    'click input[type=submit]': function (e) {
+        // do something when the users clicks input[type=submit]
     }
 }
-
-Template.location.events({
-  'submit form': function(e) {
-    e.preventDefault();
-
-    var link = {
-      geo: $(e.target).find('Geolocation.latLng()').val(),
-      owner: Meteor.userId()
-    }
-
-    link._id = Linky.insert(link);
-  }
-});

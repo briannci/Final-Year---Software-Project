@@ -1,0 +1,12 @@
+{
+  "public": {
+    "recordsPerPage" : "5"
+  },
+  "private": {
+    "AWSAccessKeyId" : "AKIAJ33EKGROYLK2A5LQ",
+    "AWSSecretAccessKey" : "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",
+    "AWSBucket" : "meteorimages"
+  }
+}
+
+

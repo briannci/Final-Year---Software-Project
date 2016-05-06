@@ -1,43 +1,16 @@
 <template name="location">
-
-<div style='position:absolute; top:0; right:0; bottom:0; left:0; overflow-y:scroll; overflow-x: hidden'>
-
-    <div class="bar bar-header bar-balanced">
-        <h1 class="title">PetPal</h1>
-    </div>
-    <div class="list card">
-        <div class="item">
+    <div class="list color1">
+    <h2 class="ion-ios-location-outline">&nbsp;Send location</h2>
         {{> map}}
-            <div class="list list-inset">
-                <h2 class="text-center">Send your details to the Pet Owner</h2>
-                <label class="item item-input">
-                    <input type="text" placeholder="Name" id="send-name">
-                </label>
-                <label class="item item-input">
-                    <input type="text" placeholder="Phone Number" id="send-phone">
-                </label>
+        <div class="list list-inset" id="loc-bg">
+            <h3 class="text-center col">Send your details to the Pet Owner</h3>
+            <label class="item item-input">
+                <input type="text" placeholder="Name" id="send-name">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Phone Number" id="send-phone">
+            </label>
             <button type="submit" class="button button-positive button-block">Send location</button>
-            </div>
         </div>
     </div>
-
-    </div>
-
-    <div class="tabs-striped tabs-color-balanced tabs-background-dark">
-        <div class="tabs">
-            <a class="tab-item" href="{{pathFor 'profile'  username=currentUser.username}}">
-                <i class="icon ion-android-person"></i>
-                Home
-            </a>
-            <a class="tab-item active" href="#">
-                <i class="icon ion-location"></i>
-                Location Found
-            </a>
-            <a class="tab-item" href="/profile/{{currentUser.username}}/contact">
-                <i class="icon ion-android-chat"></i>
-                Contact
-            </a>
-        </div>
-    </div>
-
 </template>

@@ -1,36 +1,11 @@
 <template name="contact">
-
-    <div style='position:absolute; top:0; right:0; bottom:0; left:0; overflow-y:scroll; overflow-x: hidden'>
-        <div class="bar bar-header bar-balanced">
-            <h1 class="title">PetPal</h1>
-        </div>
-    </div>
-
-    <div class="list card userBox">
-  <label class="item item-input">
-    <input type="text" placeholder="Name">
-  </label>
-
-  <label class="item item-input">
-    <textarea placeholder="Comments"></textarea>
-  </label>
-  <button type="submit" class="button button-positive button-block">Send Message</button>
-</div>
-
-    <div class="tabs-striped tabs-color-balanced tabs-background-dark">
-        <div class="tabs">
-            <a class="tab-item" href="{{pathFor 'profile'  username=currentUser.username}}">
-                <i class="icon ion-android-person"></i>
-                Home
-            </a>
-            <a class="tab-item .pin" href="/profile/{{currentUser.username}}/location">
-                <i class="icon ion-location"></i>
-                Location Found
-            </a>
-            <a class="tab-item active" href="#">
-                <i class="icon ion-android-chat"></i>
-                Contact
-            </a>
-        </div>
-    </div>
+<h3>Contact the owner</h3>
+        <label class="item item-input">
+            <input type="text" placeholder="Name">
+        </label>
+        <label class="item item-input">
+            <textarea placeholder="Message"></textarea>
+        </label>
+        <button type="submit" class="button button-positive button-block">Send Message</button>
+ 
 </template>

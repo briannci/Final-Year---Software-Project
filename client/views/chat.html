@@ -1,0 +1,45 @@
+<template name="sidebar">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav onlUsers">
+            <li class="sidebar-brand">
+                <a href="#">
+                    Online Users
+                </a>
+            </li>
+            {{#each onlusr}}
+            <li class="user"><a href='#'>{{username}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
+<template name="input">
+    <h2 class="ion-ios-chatbubble-outline"> Send A Message</h2>
+    <br/>
+    <label class="item list inset item-input">
+        <input id="message" type="text" placeholder="Enter Message">
+    </label>
+</template>
+<template name="messages">
+    <div class="col-sm-5 chat">
+        <ul class="sidebar-nav onlUsers">
+            <li class="sidebar-brand">
+                <a href="#" style="color:green;">
+                    Online
+                </a>
+            </li>
+            {{#each onlusr}}
+            <li class="user"><a href='#'>{{username}}</a></li>
+            {{/each}}
+        </ul>
+        <h3>
+        {{#each msgs}}
+        {{#if canDelete}}
+          <button class="delete-msg">Delete</button>
+        {{/if}}
+        <strong>{{name}}:</strong> 
+        {{text}} {{createdAt}}
+        <br/>
+        <br/> {{/each}}
+        </h3>
+    </div>
+</template>

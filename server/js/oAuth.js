@@ -1,6 +1,4 @@
-
-
-Accounts.onCreateUser(function (options, user) {
+Accounts.onCreateUser(function(options, user) {
     if (user.services) {
         if (options.profile) {
             user.profile = options.profile
@@ -19,13 +17,13 @@ Accounts.onCreateUser(function (options, user) {
             // if email is not set, there is no way to link it with other accounts
             return user;
         }
-        
+
         // see if any existing user has this email address, otherwise create new
-        var existingUser = Meteor.users.findOne({'emails.address': email});
+        var existingUser = Meteor.users.findOne({ 'emails.address': email });
         if (!existingUser) {
             // check for email also in other services
-            var existingTwitterUser = Meteor.users.findOne({'services.twitter.email': email});
-            var existingFacebookUser = Meteor.users.findOne({'services.facebook.email': email});
+            var existingTwitterUser = Meteor.users.findOne({ 'services.twitter.email': email });
+            var existingFacebookUser = Meteor.users.findOne({ 'services.facebook.email': email });
             var doesntExist = !existingTwitterUser && !existingFacebookUser;
             if (doesntExist) {
                 // return the user as it came, because there he doesn't exist in the DB yet
@@ -43,7 +41,7 @@ Accounts.onCreateUser(function (options, user) {
 
         // precaution, these will exist from accounts-password if used
         if (!existingUser.services) {
-            existingUser.services = { resume: { loginTokens: [] }};
+            existingUser.services = { resume: { loginTokens: [] } };
         }
 
         // copy accross new service info
@@ -53,7 +51,7 @@ Accounts.onCreateUser(function (options, user) {
         );
 
         // even worse hackery
-        Meteor.users.remove({_id: existingUser._id}); // remove existing record
-        return existingUser;    		      // record is re-inserted
+        Meteor.users.remove({ _id: existingUser._id }); // remove existing record
+        return existingUser; // record is re-inserted
     }
 });
