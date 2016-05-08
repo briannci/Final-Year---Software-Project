@@ -10,12 +10,14 @@ Tracker.autorun(function() {
 Template.messages.helpers({
     'onlusr': function() {
         return Meteor.users.find({ "status.online": true, _id: { $ne: Meteor.userId() } });
+        return Meteor.users.find({ "status.online": true, _id: { $ne: Meteor.userId() } });
     }
 });
 
 Template.messages.events({
     'click .user': function() {
         Session.set('currentId', this._id);
+        Bert.alert('<h4><b>Send a message to the pet owner</b></h4>', 'info', 'fixed-bottom');
         var res = ChatRooms.findOne({ chatIds: { $all: [this._id, Meteor.userId()] } });
         if (res) {
             //already room exists

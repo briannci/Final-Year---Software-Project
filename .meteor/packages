@@ -25,8 +25,6 @@ cfs:standard-packages
 cfs:filesystem
 cfs:ui
 insecure
-juliancwirko:s-alert
-juliancwirko:s-alert-flip
 fortawesome:fontawesome
 natestrauser:animate-css
 mdg:geolocation
@@ -36,7 +34,6 @@ sacha:spin
 email
 cfs:gridfs
 accounts-twitter
-accounts-facebook
 service-configuration
 themeteorchef:bert
 timbroddin:accounts-multi
@@ -47,11 +44,13 @@ maximum:server-transform
 okgrow:image-upload
 cfs:s3
 reactive-var
-mrt:imagemagick
 accounts-base
-wenape:accounts-guest
 vodkabears:vide
 mizzao:user-status
 meteor-platform
 less
 twbs:bootstrap
+accounts-facebook
+
+pcel:loading
+fezvrasta:bootstrap-material-design

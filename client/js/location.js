@@ -54,8 +54,4 @@ if (Meteor.isClient) {
   });
 }
 
-Template.map.events = {
-    'click input[type=submit]': function (e) {
-        // do something when the users clicks input[type=submit]
-    }
-}
+

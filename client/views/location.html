@@ -1,16 +1,16 @@
 <template name="location">
     <div class="list color1">
-    <h2 class="ion-ios-location-outline">&nbsp;Send location</h2>
+    <h4 class="ion-ios-location-outline">&nbsp;Send location</h4>
         {{> map}}
         <div class="list list-inset" id="loc-bg">
-            <h3 class="text-center col">Send your details to the Pet Owner</h3>
-            <label class="item item-input">
+            <label class="item list item-floating-label item-input">
                 <input type="text" placeholder="Name" id="send-name">
             </label>
-            <label class="item item-input">
+            <label class="item list item-floating-label item-input">
                 <input type="text" placeholder="Phone Number" id="send-phone">
             </label>
             <button type="submit" class="button button-positive button-block">Send location</button>
         </div>
     </div>
 </template>
+

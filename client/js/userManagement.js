@@ -6,17 +6,17 @@ Template.userManagement.events({
         var username = $('#login-username').val();
         var password = $('#login-password').val();
 
-        Bert.alert('Logged in successfully! ', 'success');
+        Bert.alert('<h4><b>Logged in successfully!</b></h4> ', 'success', 'fixed-bottom');
 
         Meteor.loginWithPassword(username, password, function(error) {
             if (error) {
-                Bert.alert(error.message, 'danger');
+                Bert.alert(error.message, 'danger', 'fixed-bottom');
             }
         });
     },
 
     'click #logout': function() {
-        Bert.alert('You are logged out successfully! ', 'success');
+        Bert.alert('<h4><b>You are logged out successfully!</b></h4> ', 'success', 'fixed-bottom');
         Meteor.logout();
     }
 });
@@ -36,7 +36,7 @@ Template.register.events({
 
         Accounts.createUser(user, function(error) {
             if (error) {
-                Bert.alert(error.message, 'danger');
+                Bert.alert(error.message, 'danger', 'fixed-bottom');
             }
         });
     },
@@ -47,13 +47,13 @@ Template.register.events({
 
         Meteor.loginWithPassword(username, password, function(error) {
             if (error) {
-                Bert.alert(error.message, 'danger');
+                Bert.alert(error.message, 'danger', 'fixed-bottom');
             }
         });
     },
 
     'click #logout': function() {
-        Bert.alert('You are logged out successfully! ', 'success');
+        Bert.alert('<h4><b> You are logged out successfully!</b></h4> ', 'success', 'fixed-bottom');
         Meteor.logout();
 
     }
@@ -63,14 +63,14 @@ Template.userManagement.events({
     'click #signIn': function() {
         Meteor.loginWithTwitter();
         if (error) {
-            Bert.alert(error.message, 'danger');
+            Bert.alert('<h4><b>', error.message, 'danger', 'fixed-bottom', '</b></h4>');
         }
     }
 });
 
 Template.userManagement.events({
     'click #signOut': function() {
-        Bert.alert('You are logged out successfully! ', 'success');
+        Bert.alert('<h4><b> You are logged out successfully!</b></h4>', 'success', 'fixed-bottom');
         Meteor.logout();
 
     }
@@ -100,7 +100,7 @@ Template.userManagement.events({
 Template.loading.rendered = function () {
   if ( ! Session.get('loadingSplash') ) {
     this.loading = window.pleaseWait({
-      logo: '/logo.png',
+      logo: '/icons/icon96.png',
       backgroundColor: '#33CD5F',
       loadingHtml: message + spinner
     });
@@ -113,7 +113,25 @@ Template.loading.destroyed = function () {
     this.loading.finish();
   }
 };
-
 var message = '<h1 class="loading-message">PetPal</h1>';
 var spinner = '<div class="sk-spinner sk-spinner-rotating-plane"></div>';
+
+
+Template.userManagement.events({
+    'click #facebook-login': function(event) {
+        Meteor.loginWithFacebook({}, function(err){
+            if (err) {
+                throw new Meteor.Error("Facebook login failed");
+            }
+        });
+    },
+ 
+    'click #logout': function(event) {
+        Meteor.logout(function(err){
+            if (err) {
+                throw new Meteor.Error("Logout failed");
+            }
+        })
+    }
+});
 

@@ -1,43 +1,49 @@
 <template name="userManagement">
     <div style='position:absolute; top:0; right:0; bottom:0; left:0; padding-bottom:50px; overflow-y:scroll; overflow-x: hidden background-color:white;'>
         <div class="bar bar-header bar-balanced">
-            {{# if isInRoleGuest}} 
-               
-            {{/if}} 
-
-            {{# if currentUser}}
+            {{# if isInRoleGuest}} {{/if}} {{# if currentUser}}
             <img src="{{currentUser.services.twitter.profile_image_url}}" />
             <a href="{{pathFor 'profile'  username=currentUser.username}}" class="button icon-right ion-chevron-right button-clear button-light">My Profile</a> {{else}}
-            <h1 class="white title">PetPal</h1> {{/if}}
+            <h4 class="white title">PetPal</h4> {{/if}}
         </div>
         <div class="container userBox white">
-            {{# if currentUser}} {{currentUser.profile.name}} {{currentUser.services.twitter.screenName}} {{currentUser.services.twitter.lang}} {{else}} {{/if}} {{# if currentUser}}
+            {{# if currentUser}}
             <!-- Message for logged in user -->
-            <h2 style="margin-top:40px;">Hello, {{currentUser.username}}</h2>
+            <h2 style="margin-top:40px;">Hello, {{currentUser.username}}{{currentUser.services.facebook.name}} 
+                {{currentUser.services.facebook.gender}}</h2>
             <button type="button" class="button button-block button-assertive" id="logout">Log out</button>
             <a href="{{pathFor 'profile'  username=currentUser.username}}" class="button button-block button-positive">
-                    My Profile
-                </a> {{else}}
+                    My Profile</a>
+            <input type="text" id="search">
+            <a>
+                <button type="button" onclick="search()" id="btnSearch" class="button button-block button-positive">Search</button>
+            </a>
+            <script>
+            $('#btnSearch').on('click', function() {
+                var searchInput = $('#search').text();
+                var url = "localhost:3000/profile/brianlufc" + searchInput;
+                window.open(url);
+            });
+            </script>
+            {{else}}
             <!-- Log in module -->
-            <h1 class="white text-center">PetPal</h1>
-            <img class="img-responsive center-block" src="/logo.png" />
-            <h3 class="white text-center" id="log">Login with an existing account.</h3>
-            <div class="list list-inset login">
-                <label class="item ">
-                    <span class="input-label">Username</span>
-                    <input type="text" id="login-username">
-                </label>
-                <label class="item item-input item-stacked-label">
-                    <span class="input-label">Password</span>
-                    <input type="password" id="login-password">
-                </label>
+            <h3 class="white text-center">PetPal</h3>
+            <img class="img-responsive center-block" src="/icons/icon96.png" />
+            <h4 class="white text-center" id="log">Login with an existing account.</h4>
+            <div class="login">
+                <div class="form-group label-floating">
+                    <label for="i5" class="control-label">Username</label>
+                    <input type="text" class="form-control" id="login-username">
+                </div>
+                <div class="form-group label-floating">
+                    <label for="i5" class="control-label">Password</label>
+                    <input type="password" class="form-control" id="login-password">
+                </div>
             </div>
-            <div class="list list-inset nocolor">
-                <button type="button" class="button button-block button-positive login submit" id="login">Log in</button>
-            </div>
-            <h4 class="white">Or register an Pet owner account
-                <a href="register" id="gotoregister">here.</a></h4>&nbsp; &nbsp; &nbsp;
-            {{/if}}
+                <button type="button" class="btn btn-primary btn-lg btn-block" id="login">Log in</button>
+               <!-- <button id="facebook-login" class="btn btn-positive"> Login with Facebook</button><br/><br/>-->
+            <p class="white">Or register 
+                <a href="register" id="gotoregister">here.</a></p>&nbsp; &nbsp; &nbsp; {{/if}}
         </div>
     </div>
 </template>

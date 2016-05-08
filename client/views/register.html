@@ -1,74 +1,50 @@
 <template name="register">
-
     <div style='position:absolute; top:0; right:0; bottom:0; left:0; overflow-y:scroll; overflow-x: hidden'>
         <div class="bar bar-header bar-balanced">
             <h1 class="title">PetPal</h1>
         </div>
         <div class="container userBox">
-
             {{# if currentUser}}
-                <!-- Message for logged in user -->
-                <p>Hello <strong>{{currentUser.username}}</strong>, You are logged into PetPal</p>
-
-                <button type="button" class="button button-block button-assertive" id="logout">Log out</button>
-
-                <a href="{{pathFor 'profile'  username=currentUser.username}}" class="button button-block button-positive">
+            <!-- Message for logged in user -->
+            <p>Hello <strong>{{currentUser.username}}</strong>, You are logged into PetPal</p>
+            <button type="button" class="button button-block button-assertive" id="logout">Log out</button>
+            <a href="{{pathFor 'profile'  username=currentUser.username}}" class="button button-block button-positive">
                     My Profile
-                </a>
-
-            {{else}}
-
-                <div class="list list-inset register">
-                    <h4 class="text-center">Register a new user.</h4>
-
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Email Address</span>
-                        <input type="text" id="signup-email">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                    <span class="input-label">Username</span>
-                        <input type="text" id="signup-username">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Full Name</span>
-                        <input type="text" id="signup-fullname">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Pet Name</span>
-                        <input type="text" id="signup-petname">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Pet Age</span>
-                        <input type="text" id="signup-petage">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Pet Allergies?</span>
-                        <input type="text" id="signup-petallg">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Password</span>
-                        <input type="password" id="signup-password">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Confirm Password</span>
-                        <input type="password" id="signup--confirm-password">
-                    </label>
-
-                    <button type="button" class="button button-block button-positive" id="signup">Sign up</button>
+                </a> {{else}}
+            <div class="register">
+                <h4 class="text-center">Register a new user.</h4>
+                <div class="form-group label-floating">
+                    <label for="i5" class="control-label">Email Address</label>
+                    <input type="text" class="form-control" id="signup-email">
                 </div>
-
-
+                <div class="form-group label-floating">
+                    <label for="i5" class="control-label">Username</label>
+                    <input type="text" class="form-control" id="signup-username">
+                </div>
+                <div class="form-group label-floating">
+                    <label for="i5" class="control-label">Full Name</label>
+                    <input type="text" class="form-control" id="signup-fullname">
+                </div>
+                <div class="form-group label-floating">
+                    <label for="i5" class="control-label">Pet Name</label>
+                    <input type="text" class="form-control" id="signup-petname">
+                </div>
+                <div class="form-group label-floating">
+                    <label for="i5" class="control-label">Pet Age</label>
+                    <input type="text" class="form-control" id="signup-petage">
+                </div>
+                <div class="form-group label-floating">
+                    <label for="i5" class="control-label">Password</label>
+                    <input type="password" class="form-control" id="signup-password">
+                </div>
+                <button type="button" class="btn btn-primary btn-block btn-lg" id="signup">Sign up</button>
+            </div>
             <!--<h3 class="text-center">What is PetPal?</h3>
             <h4 class="text-justify">PetPal is an application built purposely for pet owners. <br/><br/>The goal of this application
                 is to give a pet owner every possible chance of their pet returning safely if the situation arose
                 whereby your your pet went missing.</h4><br/><br/>
             -->
-
-    {{/if}}
-
+            {{/if}}
+        </div>
     </div>
-
-</div>
-
-
 </template>
